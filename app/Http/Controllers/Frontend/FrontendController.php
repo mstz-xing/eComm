@@ -11,8 +11,8 @@ class FrontendController extends Controller
 {
     function index()
     {
-        $featured_products = Product::where('trending','1')->take(15)->get();
-        $trending_category = Category::where('popular','1')->take(15)->get();
+        $featured_products = Product::where('trending','1')->take(4)->get();
+        $trending_category = Category::where('popular','1')->take(4)->get();
         // $featured_prodcuts= Product::where('trending','1')->get();
         return view('frontend.index',compact('featured_products','trending_category'));
     }

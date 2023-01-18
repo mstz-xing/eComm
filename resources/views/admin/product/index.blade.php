@@ -26,7 +26,7 @@
               @foreach($products as $item)
               <tr>
                 <td>{{ $item->id}}</td>
-                <td>{{ $item->Category->name}}</td>
+                <td>{{ $item->Category->name ?? 'None'}}</td>
                 <td>{{ $item->name}}</td>
              
               

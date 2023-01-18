@@ -10,14 +10,14 @@ Welcome to Radana
     <div class="container">
         <div class="row" style="height:100px">
         <h2>Trending Products</h2>
-        <div class="owl-carousel featured-carousel own-theme" >
+       
                     @foreach($featured_products as $item)
                   
-                      <div class="item">
+                       <div class="col-md-3 mb-3">
                       
-                        <div class="card">
+                        <div class="card" style="height:600px" >
                          
-                          <img src="{{asset('assets/uploads/product/'.$item->image)}}" style="height:350px" alt="Category Image">
+                          <img src="{{asset('assets/uploads/product/'.$item->image)}}" style="height:350px" alt="Product Image">
                            <div class="card-body">
                                <h5>{{$item->name}}</h5>
                                <span class="float-start">{{$item->selling_price}}</span>
@@ -32,33 +32,73 @@ Welcome to Radana
                      </div>
                   </div>
                      @endforeach
-          </div>
+        
        </div> 
-    </div>
-  </div>
-<div class="py-5" style="margin-top: 40em;">
+</div>
+</div> 
+   
+
+<div class="py-5" style="margin-top: 60em;">
     <div class="container">
-        <div class="row" style="height:100px">
-        <h2>Trending Cateogry</h2>
-           
-                    @foreach($trending_category as $item)
-                      <div class="col-md-3 mb-3">
-                      <a href="{{url('view-category/'.$item->slug)}}">
-                        <div class="card">
-                          <img src="{{asset('assets/uploads/category/'.$item->image)}}" style="height:350px" alt="Category Image">
+        <div class="row" >
+        <h2>Trending Products</h2>
+       
+        @foreach($trending_category as $item)
+                  
+                       <div class="col-md-3 mb-3">
+                       <a href="{{url('view-category/'.$item->slug)}}">
+                        <div class="card" style="height:400px" >
+                      
+                         <img src="{{asset('assets/uploads/category/'.$item->image)}}" style="height:350px" alt="Category Image">
                            <div class="card-body">
                                <h5>{{$item->name}}</h5>
+                               <p>
+                                {{$item->description}}
+                               </p>
+                         
+                         
+                             
+                        </div>
+                        
+                     </div>
+</a>
+                  </div>
+                     @endforeach
+        
+       </div> 
+</div>
+</div> 
+
+
+
+<!-- <div class="py-5"  style="margin-top: 60em;">
+    <div class="container">
+        <div class="row" style="height:100px">
+        <h2>Trending Products</h2>
+       
+        @foreach($trending_category as $item)
+                  
+                       <div class="col-md-3">
+                       <a href="{{url('view-category/'.$item->slug)}}">
+                      
+                        <div class="card" style="height:600px" >
+                         
+                        <img src="{{asset('assets/uploads/category/'.$item->image)}}" style="height:350px" alt="Category Image">
+                           <div class="card-body">
+                           <h5>{{$item->name}}</h5>
                                
-                                   <p>
-                                    {{$item->description}}
-                                   </p>
-                           </div>
+                               <p>
+                                {{$item->description}}
+                               </p>
+                         
+                               </div>
                         </div>
                      </div>
                      @endforeach
           </div>
     </div>
-</div>
+</div> -->
+
  @endsection
  
  @section('scripts')
